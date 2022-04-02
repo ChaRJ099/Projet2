@@ -16,12 +16,13 @@ body {
     /*variables*/
     --lightblue-color: #deebff;
     --blue-color: #0065fc;
-    --grey-color: #F2F2F2;
+    --grey-color-lighter: #F2F2F2;
+    --grey-color-light: #d9d9d9;
 
     --main-font-size: 12px;
 }
 
-.content-block {
+header, main, footer {
     width: 100%;
 }
 
@@ -82,6 +83,7 @@ header {
     align-items: center;
     height: 80px;
     padding: 0 20px;
+    position: relative;
 }
 
 .menu a:link, .menu a:active, .menu a:focus {
@@ -95,7 +97,6 @@ header {
 
 .menu li a:hover {
     color: var(--blue-color);
-    position: relative;
 }
 
 .menu li a:hover::before {
@@ -133,23 +134,26 @@ h1 {
     /*overflow: hidden;*/
     justify-content: space-between;
     width: 350px;
-    height: 40px;
+    height: 55px;
     border: 1.5px solid #F2F2F2;
     background: #fff;
 }
 
 .search-area {
     border: none;
+    flex: 1;
 }
 
 .search-button {
-    /*position: absolute;*/
-    /*left: 80px;*/
     border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: var(--blue-color);
     color: #fff;
+    cursor: pointer;
+}
+.search-button .search-button-icon {
+    display: none; 
 }
 
 /*******************/
@@ -176,13 +180,25 @@ h1 {
     align-items: center;
     justify-content: center;
     background: #F2F2F2;
-    height: 38px;
-    width: 38px;
+    height: 55px;
+    width: 55px;
     color: black;
     font-size: 20px;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.info-message .fa-info {
+    border: 1px solid var(--grey-color-light);
+    color: var(--blue-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }
 
 /*******************/
@@ -195,7 +211,7 @@ h1 {
 }
 
 .star-grey i {
-    color: #d9d9d9;
+    color: var(--grey-color-light);
     font-size: 15px;
 }
 
@@ -203,29 +219,35 @@ h1 {
 /**     Filter    **/
 /*******************/
 
-form h2 {
+.filter {
+    border: 2px solid var(--grey-color-lighter);
+    border-radius: 50px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-form h2 {
     font-size: 18px;
     font-weight: 600;
+    margin-right: 35px;
+
 }
 
 .filter-form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 40px;
+}
+
+.filter-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
 }
 
 .filter-form p {
     font-size: 19px;
-}
-
-.filter {
-    border: 2px solid var(--grey-color);
-    border-radius: 50px;
-    height: 55px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 35px;
 }
 
 .filter:hover {
@@ -240,6 +262,11 @@ form h2 {
     font-weight: 600;
 }
 
+.info-message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 /*******************/
 /**  Hébergements **/
 /*******************/
@@ -254,7 +281,7 @@ form h2 {
     display: flex;
     flex-direction: column;
     padding: 35px;
-    background-color: var(--grey-color);
+    background-color: var(--grey-color-lighter);
     border-radius: 10px;
     margin-right: 40px;
 }
@@ -341,7 +368,7 @@ form h2 {
 
 .populaires {
     /*width: 550px;*/
-    background-color: var(--grey-color);
+    background-color: var(--grey-color-lighter);
     border-radius: 10px;
 }
 
@@ -391,7 +418,7 @@ form h2 {
 /*******************/
 
 footer {
-    background-color: var(--grey-color);
+    background-color: var(--grey-color-lighter);
     width: 100%;
     margin-top: 50px;
     padding-top: 10px;
@@ -423,14 +450,130 @@ footer {
 @media screen and (max-width: 768px)
 {
     
+    body {
+        padding: 0;
+    }
+
     main
     {
         width: auto;
+        padding: 0;
     }
+
+    .recherche, .logements, .activites {
+        padding: 0 25px;
+    }
+
+/*******************/
+/** Mobile Header **/
+/*******************/
+
+    header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo {
+        height: auto;
+        width: 100%;
+        height: 100PX;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .logo img {
+        height: auto;
+        width: 100px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+    }
+
+    .menu li a::before {
+        background-color:  var(--grey-color-lighter);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        content: "";
+    }
+
+    .menu li a:hover::before {
+        top: auto;
+        bottom: 0;
+    }
+
+    .menu ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .menu ul li {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .menu ul li a{
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+    }
+
+    #lien-activite {
+        margin-left: 0;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-form {
+        margin: 20px 0;
+    }
+
+    .search-button {
+        border-radius: 15px;
+    }
+
+    .search-button-text {
+        display: none;
+    }
+
+    .search-button .search-button-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        width: 45px;
+    }
+
+/*******************/
+/** Mobile Filter **/
+/*******************/
 
     .filter-form {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-block {
+        gap: 15px;
     }
 
     .filter {
@@ -444,12 +587,25 @@ footer {
     }
 
     .hebergements {
-        min-width: 200px;
+        margin-right: 0;
     }
 
     .populaires {
-        min-width: 200px;
         order: 0;
+    }
+
+    .card-populaires {
+        margin: 0;
+        min-width: none;
+        width: 100%;
+    }
+
+/*******************/
+/** Mobile Footer **/
+/*******************/
+
+    .menu-footer {
+        flex-direction: column;
     }
 }
 

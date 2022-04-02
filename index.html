@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Titre de la page</title>
+  <title>Mon projet 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./assets/css/normalize.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="https://kit.fontawesome.com/81c7537d16.js" crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
 
 <!-------------------- Header & Nav -------------------->
 
-  <header class="content-block">
+  <header>
     <div class="logo">
       <img src="assets/images/Booki.png">
     </div>
@@ -29,7 +29,7 @@
     </nav>
   </header>
 
-  <main class="content-block">
+  <main>
 
 <!-------------------- Section recherche -------------------->
     <section class="recherche">
@@ -43,7 +43,10 @@
             <i class="fa-solid fa-location-dot"></i>
           </div>
           <input class="search-area" type="text" name="text" placeholder="Marseille, France">
-          <input class="search-button" type="submit" value="Rechercher">
+          <button class="search-button" type="submit">
+            <span class="search-button-text">Rechercher</span>
+            <i class="search-button-icon fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
       </form>
 
@@ -52,38 +55,45 @@
         
         <h2>Filtres</h2>
         
-
-        <div class="filter">
-          <div class="circle-icon">
-            <i class="fa-solid fa-money-bill-wave"></i>
+        <div class="filter-block">
+          <div class="filter">
+            <div class="circle-icon">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+            <span>&Eacuteconomique</span>
           </div>
-          <span>&Eacuteconomique</span>
-        </div>
-
-        <div class="filter">
-          <div class="circle-icon">
-            <i class="fa-solid fa-child-reaching"></i>
-          </div>
-          <span>Familial</span>
-        </div>
-
-        <div class="filter">
-          <div class="circle-icon">
-            <i class="fa-solid fa-heart"></i>
-          </div>
-          <span>Romantique</span>
-        </div>
-
 
           <div class="filter">
             <div class="circle-icon">
-              <i class="fa-solid fa-dog"></i>
+              <i class="fa-solid fa-child-reaching"></i>
             </div>
-            <span>Animaux autorisés</span>
+            <span>Familial</span>
+          </div>
+
+          <div class="filter">
+            <div class="circle-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <span>Romantique</span>
+          </div>
+
+
+            <div class="filter">
+              <div class="circle-icon">
+                <i class="fa-solid fa-dog"></i>
+              </div>
+              <span>Animaux autorisés</span>
+            </div>
           </div>
 
       </form>
-      <p>Plus de 500 logements sont disponibles dans cette ville</p>
+
+      <div class="info-message">
+        <i class="fa-solid fa-info"></i>
+        <p>
+          Plus de 500 logements sont disponibles dans cette ville
+        </p>
+      </div>
 
     </section>
 
@@ -351,7 +361,7 @@
   </main>
 
 <!-------------------------- Footer -------------------------->
-  <footer class="content-block">
+  <footer>
     <nav class="menu-footer">
 
       <div class="liens-footer">
