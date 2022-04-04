@@ -9,8 +9,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 70px;
-    padding-right: 70px;
     margin: 0 auto;
 
     /*variables*/
@@ -41,29 +39,24 @@ main {
 
 header {
     display: flex;
-    height: 130px;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 20px;
+    align-items: flex-end;
+    padding-left: 30px;
     padding-right: 20px;
 }
 
-.logo {
+.logo img {
     height: auto;
-    width: 110px;
+    width: 70%;
 }
 
 /*******************/
 /**      Menu     **/
 /*******************/
 
-.menu {
-    padding-top: 40px;
-}
-
 .menu ul {
     display: flex;
-    height: 80px;
 }
 
 .menu ul li {
@@ -71,17 +64,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*width: 120px;*/
+    font-size: 20px;
 }
-
-/*.menu li {
-    padding-top: 50px;
-}*/
 
 .menu a {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 100px;
     padding: 0 20px;
     position: relative;
 }
@@ -113,9 +102,13 @@ header {
     margin-left: 30px;
 }
 
-h1 {
-    font-size: 26px;
-    font-weight: 600;
+/*******************/
+/**   Recherche   **/
+/*******************/
+
+.recherche h1 {
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .search-form {
@@ -277,17 +270,19 @@ h1 {
 }
 
 .hebergements {
-    /*min-width: 1150px;*/
+    width: 1145px;
     display: flex;
     flex-direction: column;
-    padding: 35px;
+    padding: 50px;
     background-color: var(--grey-color-lighter);
     border-radius: 10px;
-    margin-right: 40px;
 }
 
-.hebergements h1 {
-    margin: 0 0 20px 0;
+.hebergements h1, .populaires h1, .activites h1 {
+    
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
 }
 
 .hebergements-content {
@@ -295,20 +290,19 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 25px;
-    
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .card-hebergement {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 315px;
-    /*height: 260px;*/
+    align-items: center;
+    width: 320px;  
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 1px 3px 3px 3px #dfdfdf;
-    /*margin: 20px;*/
     padding: 7px;
 }
 
@@ -329,7 +323,6 @@ h1 {
 }
 
 .img-card-hebergement {
-    width: 300px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -367,9 +360,17 @@ h1 {
 /*******************/
 
 .populaires {
-    /*width: 550px;*/
+    width: 560px;
     background-color: var(--grey-color-lighter);
     border-radius: 10px;
+    padding: 50px;
+}
+
+.populaires-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
 }
 
 .card-populaires {
@@ -381,7 +382,6 @@ h1 {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 1px 3px 3px 3px #dfdfdf;
-    margin: 20px;
     padding: 7px;
 }
 
@@ -410,6 +410,32 @@ h1 {
     align-items: center;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    overflow: hidden;
+}
+
+/*******************/
+/**   Activités   **/
+/*******************/
+.card-activites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 580px;
+    width: 395px;  
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 3px 3px 3px #dfdfdf;
+}
+
+.img-card-activites {
+    width: auto;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     overflow: hidden;
 }
 
@@ -447,16 +473,20 @@ footer {
 /** Media queries **/
 /*******************/
 
+/*******************/
+/**     Mobile    **/
+/*******************/
+
 @media screen and (max-width: 768px)
 {
     
     body {
+        width: auto;
         padding: 0;
     }
 
     main
     {
-        width: auto;
         padding: 0;
     }
 
@@ -580,24 +610,73 @@ footer {
         min-width: 200px;
     }
 
+    .info-message {
+        align-items: flex-start;
+    }
+
+    .info-message p {
+        width: 100%;
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .info-message .fa-info {
+       width: 20px;
+       height: 20px;
+       font-size: 12px;
+    }
+
+/**********************/
+/** Mobile logements **/
+/**********************/
+
     .logements {
+        width: 100%;
+        padding: 0px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column-reverse;
+        
     }
 
     .hebergements {
-        margin-right: 0;
+        width: 100%;
+        margin-right: 0px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .hebergements-content {
+        justify-content: center;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .card-hebergement {
+        width: auto;
     }
 
     .populaires {
+        width: 100%;
         order: 0;
+        margin-right: 0px;
+        margin-top: 20px;
+        padding: 10px;
     }
 
     .card-populaires {
+        margin-right: 0;
         margin: 0;
-        min-width: none;
-        width: 100%;
+        width: 320px;
+    }
+
+    .card-body-logement {
+        width: 150px;
+    }
+
+    .img-card-populaires {
+        width: 120px;
+        height: 128px;
     }
 
 /*******************/
@@ -607,7 +686,50 @@ footer {
     .menu-footer {
         flex-direction: column;
     }
+
+    .liens-footer {
+        margin: 0;
+        margin-right: 0px;
+    }
 }
 
+/*******************/
+/**    Tablette   **/
+/*******************/
+
+/*********************/
+/** Tablette Filter **/
+/*********************/
+@media screen and (max-width: 992px)
+{
+    .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logements {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        order: 0;
+    }
+
+/*********************/
+/** Tablette Footer **/
+/*********************/
+    .liens-footer {
+        margin-right: 50px;
+    }
+}
 
 
