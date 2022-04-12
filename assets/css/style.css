@@ -287,12 +287,15 @@ header {
 
 .logements {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
     gap: 30px;
 }
 
 .hebergements {
+    min-width: 780px;
+    flex: 3;
     display: flex;
     flex-direction: column;
     padding: 50px;
@@ -383,11 +386,15 @@ header {
 
 .card-notation i {
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 0;
 }
 
 .zoom-photo-card {
     object-fit: cover;
+}
+
+.afficher-plus {
+    margin-top: 20px;
 }
 
 .afficher-plus span {
@@ -410,10 +417,10 @@ header {
 /*******************/
 
 .populaires {
-    width: 570px;
     background-color: var(--grey-color-lighter);
     border-radius: 10px;
     padding: 50px;
+    flex:1;
 }
 
 .populaires-title {
@@ -494,6 +501,7 @@ header {
 .zoom-photo-card-pop {
     object-fit: cover;
     width: 180px;
+    height: 100%;
 }
 
 /*******************/
@@ -656,7 +664,8 @@ footer {
 }
 
 .liens-footer {
-    margin-right: 300px;
+    min-width: 226px;
+    flex: 1;
 }
 
 /***************************/
@@ -1040,6 +1049,7 @@ footer {
 
     .hebergements {
         width: 100%;
+        flex-direction: column;
         margin-right: 0px;
         margin-top: 20px;
         padding: 25px;
@@ -1154,7 +1164,7 @@ footer {
 /** Tablette Footer **/
 /*********************/
     footer {
-        padding: 10px 70px 10px 70px;
+        padding: 10px 25px 40px 25px;
         margin-top: 40px;
     }
 
