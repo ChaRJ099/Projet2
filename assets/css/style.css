@@ -238,7 +238,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .filter-form h2 {
@@ -293,7 +293,7 @@ header {
 }
 
 .hebergements {
-    min-width: 780px;
+    /*min-width: 780px;*/
     flex: 3;
     display: flex;
     flex-direction: column;
@@ -324,6 +324,8 @@ header {
 
 .card-hebergement a {
     text-decoration: none;
+    width: 100%;
+    height: 100%;
 }
 
 .card-hebergement:hover {
@@ -352,6 +354,10 @@ header {
     box-shadow: 1px 3px 3px 3px #dfdfdf;
     padding: 7px;
     transition: 250ms ease-out;
+}
+
+.card-hebergement img {
+    height: 100%;
 }
 
 .card-body-hebergement {
@@ -671,7 +677,7 @@ footer {
 }
 
 .liens-footer {
-    min-width: 226px;
+    /*min-width: 226px;*/
     flex: 1;
 }
 
@@ -683,7 +689,7 @@ footer {
 /**     Mobile    **/
 /*******************/
 
-@media screen and (max-width: 768px)
+@media screen and (max-width : 567px)
 {
     
     body {
@@ -697,7 +703,7 @@ footer {
     }
 
     .recherche, .logements, .section-activites {
-        padding: 0 25px;
+        padding: 0 15px;
     }
 
 /*******************/
@@ -718,6 +724,7 @@ footer {
         justify-content: center;
         align-items: center;
         display: flex;
+        padding-bottom: 0;
     }
 
     .logo img {
@@ -732,6 +739,10 @@ footer {
         justify-content: center;
         align-items: center;
         padding-top: 0;
+    }
+
+    .menu a {
+        padding: 0 10px 0 25px;
     }
 
     .menu li a::before {
@@ -761,6 +772,7 @@ footer {
     .menu ul li {
         width: 50%;
         justify-content: center;
+        font-size: 17px;
     }
 
     .menu ul li a{
@@ -773,8 +785,17 @@ footer {
         margin-left: 0;
     }
 
+    .recherche h1 {
+        font-size: 20px;
+    }
+
+    .recherche p {
+        font-size: 15px;
+    }
+
     .search-box {
         width: 100%;
+        max-width: 350px;
         position: relative;
     }
 
@@ -824,7 +845,12 @@ footer {
     }
 
     .filter {
-        min-width: 200px;
+        height: 40px;
+    }
+
+    .filter span {
+        margin: 0 10px;
+        font-size: 15px;
     }
 
     .info-message {
@@ -843,6 +869,11 @@ footer {
        font-size: 12px;
     }
 
+    .circle-icon {
+        width: 40px;
+        height: 40px;
+    }
+
 /**********************/
 /** Mobile logements **/
 /**********************/
@@ -853,7 +884,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column-reverse;
-        
+        gap: 0;
     }
 
     .hebergements {
@@ -894,12 +925,17 @@ footer {
         height: 80px;
     }
 
-    .card-body-hebergement h2, .card-body-hebergement p, .card-body-logement h2, .card-body-logement p {
+    .card-body-hebergement h2, .card-body-logement h2 {
         font-size: 15px;
+        margin: 0 0 10px 0;
+    }
+
+    .card-body-hebergement p, .card-body-logement p {
+        font-size: 13px;
     }
 
     .img-card-hebergement {
-        height: 100px;
+        /*height: 100px;*/
         width: 100%;
     }
 
@@ -946,13 +982,13 @@ footer {
     }
 
     .card-body-logement {
-        width: 200px;
-        height: 80px;
+        width: 100%;
     }
 
     .img-card-populaires {
-        width: 120px;
         height: 128px;
+        width: 85%;
+        max-width: 180px;
     }
 
 /**********************/
@@ -969,11 +1005,19 @@ footer {
         margin: 0 0 20px 0;
     }
 
+    .section-activites h2 {
+        font-size: 15px;
+    }
+
     .activites-content {
         flex-direction: column;
         width: 100%;
         height: auto;
         gap: 20px;
+    }
+
+    .card-activites-title {
+        height: 55px;
     }
 
     .box-double-card {
@@ -995,25 +1039,30 @@ footer {
         width: auto;
     }
 
+    .zoom-photo-card-petite {
+        height: 100%;
+    }
+
     .img-card-activites {
         align-items: center;
-        height: 140px;
+        height: 183px;
         width: 100%;
         overflow: hidden;
     }
 
     .img-card-activites-petite {
         width: 100%;
+        align-items: flex-start;
     }
 
     .img-card-activites img {
         align-items: center;
-        height: 140px;
+        height: 183px;
         min-width: 100%;
     }
 
     #frioul, #pomegues, #lagarde, #longchamp {
-        height: 140px;
+        height: 183px;
         width: 100%;
     }
 
@@ -1024,10 +1073,15 @@ footer {
     footer {
         margin: 20px 0 0 0;
         padding: 10px 25px 40px 25px;
+        font-size: 13px;
     }
     
     .menu-footer {
         flex-direction: column;
+    }
+
+    .menu-footer ul li {
+        margin-bottom: 7px;
     }
 
     .liens-footer {
@@ -1036,24 +1090,461 @@ footer {
     }
 }
 
-/*******************/
-/**    Tablette   **/
-/*******************/
+/************************/
+/**    Mini Tablette   **/
+/************************/
 
-/*********************/
-/** Tablette Filter **/
-/*********************/
-@media screen and (min-width: 769px) and (max-width: 992px)
+@media screen and (min-width: 568px) and (max-width: 768px)
 {
+    body {
+        width: auto;
+        padding: 0;
+    }
+
+    main
+    {
+        padding: 0;
+    }
+
+    .logements, .section-activites, .populaires {
+        padding: 20px 25px;
+    }
+
+    .recherche {
+        padding: 0 25px;
+    }
+    
+    header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo {
+        height: auto;
+        width: 100%;
+        height: 100PX;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 0;
+    }
+
+    .logo img {
+        height: auto;
+        width: 100px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+    }
+
+    .menu a {
+        padding: 0 10px 0 25px;
+    }
+
+    .menu li a::before {
+        background-color:  var(--grey-color-lighter);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        content: "";
+    }
+
+    .menu li a:hover::before {
+        top: auto;
+        bottom: 0;
+    }
+
+    .menu ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .menu ul li {
+        width: 50%;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .menu ul li a{
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+    }
+
+    .recherche h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    
+    .recherche p {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .search-form {
+        margin-bottom: 20px;
+    }
+
     .filter-form {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .filter-block {
+        gap: 15px;
+    }
+
+    .filter {
+        height: 40px;
+    }
+
+    .filter span {
+        margin: 0 10px;
+        font-size: 17px;
+    }
+
+    .info-message {
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .info-message p {
+        width: 100%;
+        font-size: 16px;
+        margin: 0px;
+    }
+
+    .info-message .fa-info {
+       width: 20px;
+       height: 20px;
+       font-size: 12px;
+    }
+
+    .circle-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hebergements h1, .populaires h1 {
+        font-size: 24px;
+    }
+
+    .hebergements h2, .populaires h2, .section-activites h2 {
+        font-size: 19px;
+    }
+
+    .logements {
+        width: 100%;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 0;   
+    }
+
+    .hebergements {
+        margin-right: 0;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .hebergements-content {
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .card-hebergement {
+        width: 48%;
+    }
+    
+    .card-hebergement a {
+        width: 100%;
+    }
+
+    .img-card-hebergement img {
+        height: 220px;
+    }
+
+    .populaires-content {
+        gap: 15px;
+    }
+
+    .card-populaires {
+        height: 185px;
+    }
+
+    .img-card-populaires {
+        width: 41%;
+        height: 170px;
+        justify-content: flex-start;
+    }
+
+    .card-body-logement {
+        width: 341px;
+        padding: 15px;
+    }
+
+    .zoom-photo-card-pop{
+        width: 100%;
+    }
+
+    #lien-activite {
+        margin-left: 0;
+    }
+
+    .section-activites {
+        padding: 25px;
+        margin-top: 0px;
+    }
+
+    .section-activites h1 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+    }
+
+    .activites-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .card-activites-title {
+        height: 55px;
+    }
+
+    .box-double-card {
+        width: 48%;
+        order: 1;
+        gap: 20px;
+    }
+
+    .card-activites-grande {
+        height: auto;
+        width: 48%;
+    }
+
+    .card-activites-grande a, .card-activites-petite a {
+        width: 100%;
+    }
+
+    .card-activites-petite {
+        height: auto;
+        width: auto;
+    }
+
+    .zoom-photo-card-petite {
+        height: 100%;
+    }
+
+    .img-card-activites {
+        align-items: center;
+        height: 183px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .img-card-activites-petite {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .img-card-activites img {
+        align-items: center;
+        height: 183px;
+        min-width: 100%;
+    }
+
+    #frioul, #pomegues, #lagarde, #longchamp {
+        height: 183px;
+        width: 100%;
+    }
+
+    footer {
+        margin: 20px 0 0 0;
+        padding: 10px 25px 10px 25px;
+        font-size: 13px;
+    }
+    
+    .menu-footer {
+        flex-direction: row;
+    }
+
+    .menu-footer ul li {
+        margin-bottom: 7px;
+    }
+
+    .grand-bloc {
+        flex: 5;
+    }
+
+    .moyen-bloc {
+        flex: 4;
+    }
+
+    .petit-bloc {
+        flex: 2;
+    }
+}
+
+/*******************/
+/**    Tablette   **/
+/*******************/
+
+
+@media screen and (min-width: 769px) and (max-width: 992px)
+{
+
+    header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo {
+        height: auto;
+        width: 100%;
+        height: 100PX;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 0;
+    }
+
+    .logo img {
+        height: auto;
+        width: 100px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+    }
+
+    .menu a {
+        padding: 0 10px 0 25px;
+    }
+
+    .menu li a::before {
+        background-color:  var(--grey-color-lighter);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        content: "";
+    }
+
+    .menu li a:hover::before {
+        top: auto;
+        bottom: 0;
+    }
+
+    .menu ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .menu ul li {
+        width: 50%;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .menu ul li a{
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+    }
     
     main {
-        padding: 0 25px 0 25px;
+        padding: 0 30px 0 30px;
+    }
+
+    .recherche h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .recherche p {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .search-form {
+        margin: 0 0 20px 0;
+    }
+
+/*********************/
+/** Tablette Filter **/
+/*********************/
+
+    .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-block {
+        gap: 20px;
+    }
+
+    .filter {
+        height: 45px;
+    }
+
+    .filter span {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    .info-message {
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .info-message p {
+        width: 100%;
+        font-size: 17px;
+        margin: 0px;
+    }
+
+    .info-message .fa-info {
+       width: 20px;
+       height: 20px;
+       font-size: 14px;
+    }
+
+    .circle-icon {
+        width: 45px;
+        height: 45px;
     }
 
 /********************************/
@@ -1070,120 +1561,149 @@ footer {
         width: 100%;
         flex-direction: column;
         margin-right: 0px;
-        margin-top: 20px;
-        padding: 25px;
+        padding: 40px;
+    }
+
+    .hebergements h1, .populaires h1 {
+        font-size: 24px;
+    }
+
+    .hebergements p, .populaires p {
+        font-size: 16px;
+    }
+
+    .hebergements h2, .populaires h2, .section-activites h2 {
+        font-size: 19px;
     }
 
     .hebergements-content {
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 20px;
     }
 
     .card-hebergement {
-        width: 100%;
+        width: 48%;
     }
-
+    
     .card-hebergement a {
         width: 100%;
     }
 
-    .img-card-hebergement {
-        width: 100%;
+    .img-card-hebergement img {
+        height: 220px;
     }
 
     .populaires {
         width: 100%;
         order: 0;
-        padding: 25px;
+        padding: 40px;
     }
 
     .populaires-content {
-        align-items: flex-start;
-        gap: 20px;
+        gap: 15px;
     }
 
     .card-populaires {
-        width: 100%;
-    }
-
-    .card-populaires-description {
-        margin-bottom: 10px;
-    }
-
-    .card-body-logement {
-        width: 100%;
-        justify-content: flex-start;
+        height: 185px;
     }
 
     .img-card-populaires {
-        width: 235px;
+        width: 41%;
+        height: 170px;
+        justify-content: flex-start;
     }
 
+    .card-body-logement {
+        width: 341px;
+        padding: 15px;
+    }
+
+    .zoom-photo-card-pop{
+        width: 100%;
+    }
 
 /********************************/
 /** Tablette Section Activités **/
 /********************************/
 
+#lien-activite {
+    margin-left: 0;
+}
+
 .section-activites {
-    margin-top: 0px;
-    padding-top: 20px;
+    padding: 0px;
+    margin-top: 30px;
+}
+
+.section-activites h1 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
 }
 
 .activites-content {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+}
+
+.card-activites-title {
+    height: 55px;
+}
+
+.box-double-card {
+    width: 48%;
+    order: 1;
     gap: 20px;
 }
 
 .card-activites-grande {
-    height: 250px;
-    width: 100%;
+    height: auto;
+    width: 48%;
 }
 
-.card-activites-grande a {
-    height: 250px;
+.card-activites-grande a, .card-activites-petite a {
     width: 100%;
-}
-
-.img-card-activites img {
-    width: 100%;
-    height: 178px;
-}
-
-.img-card-activites {
-    height: 178px;
-    width: 100%;
-}
-
-.box-double-card {
-    width: 100%;
-    gap: 20px;
 }
 
 .card-activites-petite {
-    height: 250px;
-    width: 100%;
+    height: auto;
+    width: auto;
 }
 
-.card-activites-petite a {
-    height: 250px;
+.zoom-photo-card-petite {
+    height: 100%;
+}
+
+.img-card-activites {
+    align-items: center;
+    height: 183px;
     width: 100%;
+    overflow: hidden;
 }
 
 .img-card-activites-petite {
-    height: 178px;
     width: 100%;
+    align-items: flex-start;
 }
 
-#pomegues, #frioul, #lagarde, #longchamp {
-    height: 178px;
+.img-card-activites img {
+    align-items: center;
+    height: 183px;
+    min-width: 100%;
+}
+
+#frioul, #pomegues, #lagarde, #longchamp {
+    height: 183px;
+    width: 100%;
 }
 
 /*********************/
 /** Tablette Footer **/
 /*********************/
     footer {
-        padding: 10px 25px 40px 25px;
+        padding: 10px 30px 10px 30px;
         margin-top: 40px;
     }
 
@@ -1194,13 +1714,29 @@ footer {
     .menu-footer {
         justify-content: space-between;
     }
+
+    .menu-footer ul li {
+        margin-bottom: 7px;
+    }
+
+    .grand-bloc {
+        flex: 6;
+    }
+
+    .moyen-bloc {
+        flex: 5;
+    }
+
+    .petit-bloc {
+        flex: 3;
+    }
 }
 
 /*********************/
 /**    Petit ecran  **/
 /*********************/
 
-@media screen and (min-width: 993px) and (max-width: 1869px)
+@media screen and (min-width: 993px) and (max-width: 1919px)
 {
     main {
         padding: 0 30px;
@@ -1210,22 +1746,56 @@ footer {
         padding: 0 20px 0 40px;
     }
 
-    .circle-icon {
-        width: 35px;
-        height: 35px;
+    .recherche h1 {
+        font-size: 24px;
+        margin-bottom: 0;
     }
 
-    .filter {
-        height: 35px;
+    .recherche p {
+        font-size: 18px;
+        margin-top: 8px;
     }
 
     .filter-form {
-        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-block {
+        gap: 20px;
+    }
+
+    .filter {
+        height: 45px;
     }
 
     .filter span {
         margin: 0 10px;
-        font-size: 15px;
+        font-size: 18px;
+    }
+
+    .info-message {
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .info-message p {
+        width: 100%;
+        font-size: 17px;
+        margin: 0px;
+    }
+
+    .info-message .fa-info {
+       width: 20px;
+       height: 20px;
+       font-size: 14px;
+    }
+
+    .circle-icon {
+        width: 45px;
+        height: 45px;
     }
 
     .star-blue i, .star-grey i {
@@ -1315,8 +1885,13 @@ footer {
         width: 25%;
     }
 
+    .card-activites-grande a {
+        width: 100%;
+    }
+
     .box-double-card {
         width: 25%;
+        gap: 20px;
     }
 
     .card-activites-petite {
@@ -1324,7 +1899,40 @@ footer {
     }
 
     .img-card-activites {
-        max-width: 495px;
-        max-height: 430px;
+        width: 100%;
+        max-width: 495px;  
+        height: 392px;
+    }
+
+    .img-card-activites img {
+        width: 100%;
+    }
+
+    #lagarde, #longchamp {
+        height: 145px;
+    }
+
+    #pomegues {
+        height: 180px;
+    }
+
+    #frioul {
+        height: 120px;
+    }
+
+    footer {
+        padding: 10px 30px 10px 30px;
+    }
+
+    .grand-bloc {
+        flex: 3;
+    }
+
+    .moyen-bloc {
+        flex: 3;
+    }
+
+    .petit-bloc {
+        flex: 3;
     }
 }
